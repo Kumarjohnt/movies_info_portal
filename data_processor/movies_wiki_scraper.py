@@ -57,7 +57,7 @@ def scrap_movie_details_from_wiki(movie_url, movies_list):
             movies_list[key_str] = ''
 
 
-def scrap_movies_list_from_wiki():
+def scrap_movies_list_from_wiki(movies_csv_data):
     base_url = "https://en.wikipedia.org"
     oscar_wining_url = "/wiki/List_of_Academy_Award-winning_films"
     url = base_url + oscar_wining_url
@@ -96,10 +96,21 @@ def scrap_movies_list_from_wiki():
         if movie_url:
             scrap_movie_details_from_wiki(movie_url, movies_dict)
 
+        movie_genres = ''
+        rating = ''
+
+        for key, value in movies_csv_data.items():
+            if movie_title in value['movie_name'] and movie_release_year in value['release_year']:
+                movie_genres = value['movie_genres']
+                rating = value['rating']
+                break
+
+        movies_dict['movie_genres'] = movie_genres
+        movies_dict['rating'] = rating
+
         movies_details_info_list.append(movies_dict)
 
     print("Movie Scraping Completed")
-    return movies_details_info_list
-
-print(scrap_movies_list_from_wiki())
+    print(movies_details_info_list)
+    # return movies_details_info_list
 
