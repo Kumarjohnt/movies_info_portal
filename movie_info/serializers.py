@@ -12,3 +12,4 @@ class MovieDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = MoviesData
         exclude = ('created_at', 'updated_at')
+

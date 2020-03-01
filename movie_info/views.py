@@ -57,3 +57,4 @@ class GetMovieDetailsData(APIView):
                     'message': "No Movie Details Found for This ID - {}".format(movie_id),
                 }, status=status.HTTP_404_NOT_FOUND
             )
+
