@@ -14,7 +14,7 @@
 * Create a `env.py` as like as `example_env.py`.
 * You have a database with same credentials as in `env.py`. If not then configure your own `env.py` file.
 * You can run this project by simply downloading and executing `run.sh` script.
-* Please execute `python manage.py shell` to scrap and seed data. 
+* Please execute `python manage.py shell` to scrap and seed initial data. 
  
 
 **Bash File Execution Command**
@@ -28,7 +28,7 @@
 > **`python manage.py migrate`**
 >
 > **`python manage.py shell`**\
-> **`from data_processor.caller import data_processor`**\
+> **`from data_processor.processor import data_processor`**\
 > **`data_processor()`**\
 > **`exit()`**
 >
@@ -36,7 +36,7 @@
 > 
 
 **When Python Shell Terminal Appears Please Execute This Commands**
-> **from data_processor.caller import data_processor**\
+> **from data_processor.processor import data_processor**\
 > **data_processor()**
 
 
