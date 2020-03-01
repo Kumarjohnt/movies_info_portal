@@ -35,12 +35,12 @@
 > **`python manage.py runserver`**
 > 
 
-**When Python Shell Terminal Appears Please Execute This Commands**
+**When Python Shell Terminal Appears Please Execute Below Mentioned Commands**
 > **from data_processor.processor import data_processor**\
 > **data_processor()**
 
 
-**After Complete Scraping Please Execute This Command To Exit From Python Shell**
+**After Completed Scraping Please Execute Below Mentioned Command To Exit From Python Shell**
 > **exit()**
 
 **Sample API Urls**
