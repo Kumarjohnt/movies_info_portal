@@ -1,6 +1,10 @@
 import csv
 
 
+'''
+Purpose of this function is process data from both movies.csv and ratings.csv. Generate a list of dict with required 
+data and pass that list to scrap_movies_list_from_wiki function.
+'''
 def perse_csv_data():
     movies_csv_data = csv.DictReader(open('movies.csv'), delimiter=',')
     ratings_csv_data = csv.DictReader(open('ratings.csv'), delimiter=',')
@@ -8,6 +12,8 @@ def perse_csv_data():
     movies_data_dict = {}
     ratings_data_dict = {}
 
+
+    # This loop is used to extract data from movies.csv and create a list of dict with thse data
     for data in movies_csv_data:
         movie_id = data['movieId']
         movie_title = data['title']
@@ -25,6 +31,7 @@ def perse_csv_data():
             movies_data_dict.update({movie_id: {'movie_name': movie_name, 'release_year': release_year,
                                                'movie_genres': movie_genres, 'rating': ""}})
 
+    # This loop is used to extract data from ratings.csv and calculate average ratings for those movies
     for data in ratings_csv_data:
         movie_id = data['movieId']
         rating = float(data['rating'])
@@ -35,7 +42,7 @@ def perse_csv_data():
             ratings_data_dict[movie_id]['total_rating'] += rating
             ratings_data_dict[movie_id]['total_rating_count'] += 1
 
-
+    # This loop is used to merge extracted values from movies.csv and ratings.csv
     for key, value in movies_data_dict.items():
         rating_val = ''
         if key in ratings_data_dict:

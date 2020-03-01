@@ -1,6 +1,10 @@
 import os
 import requests
 
+
+'''
+Purpose of this function is download and save movies.csv and ratings.csv for given urls.
+'''
 def download_csvs():
     movie_csv_url = 'https://school.cefalolab.com/assignment/python/movies.csv'
     movie_req = requests.get(movie_csv_url, verify=False)

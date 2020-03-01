@@ -111,7 +111,10 @@ def scrap_movies_list_from_wiki(movies_csv_data):
 
         movies_details_data.append(movies_dict)
 
-    print("Movie Scraping Completed")
+    print("Movie's Data Scraping Completed")
+
     if movies_details_data:
         MoviesData.objects.save_movies_data(movies_details_data)
+
+    print("Movie's Data Insertion Completed")
 
