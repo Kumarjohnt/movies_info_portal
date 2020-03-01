@@ -7,3 +7,5 @@ app_logger/*.log.*
 env.py
 db.sqlite3
 .idea
+movies.csv
+ratings.csv
