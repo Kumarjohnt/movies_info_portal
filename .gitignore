@@ -1,0 +1,9 @@
+### Django ###
+app_logger/*.log
+app_logger/*.log.*
+*.log
+*.pyc
+*__pycache__/
+env.py
+db.sqlite3
+.idea
