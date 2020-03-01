@@ -15,10 +15,25 @@ class GetMoviesSummeryData(APIView):
 
         response_data = MoviesData.objects.all_movies_data()
 
-        paginator = Paginator(response_data, page_size)
-        movie_data_serializer = MovieMinSerializer(paginator.page(page_number), many=True, context={'request': request})
+        try:
+            paginator = Paginator(response_data, page_size)
+            movie_data_serializer = MovieMinSerializer(
+                paginator.page(page_number),
+                many=True, context={'request': request}
+            )
+            data = movie_data_serializer.data
+            return Response(
+                {
+                    'data': data
+                }, status=status.HTTP_200_OK
+            )
 
-        return Response(movie_data_serializer.data, status=status.HTTP_200_OK)
+        except:
+            return Response(
+                {
+                    'message': "ERROR!!! Invalid Page No.",
+                }, status=status.HTTP_201_CREATED
+            )
 
 
 class GetMovieDetailsData(APIView):
