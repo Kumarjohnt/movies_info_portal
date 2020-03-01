@@ -112,7 +112,7 @@ class MoviesDataManager(models.Manager):
 
     # get all movies data
     def all_movies_data(self):
-        return self.all()
+        return self.order_by('id').all()
 
     # get movie details by ID
     def get_movie_data_by_id(self, movie_id):
