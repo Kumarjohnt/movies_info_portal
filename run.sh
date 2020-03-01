@@ -36,7 +36,7 @@ git clone https://github.com/tssovi/movies_info_portal.git
 cd movies_info_portal
 
 # Copy example_env.py as env.py
-cp -v example_env.py env.py
+cp -v movie_portal/example_env.py movie_portal/env.py
 
 # Install required packages
 pip install -r requirements.txt
