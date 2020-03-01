@@ -1,6 +1,7 @@
 import re
 import requests
 from bs4 import BeautifulSoup
+from movie_info.models import MoviesData
 
 
 def scrap_movie_details_from_wiki(movie_url, movies_list):
@@ -71,7 +72,7 @@ def scrap_movies_list_from_wiki(movies_csv_data):
 
     movies = contect_html.find_all('tr')
 
-    movies_details_info_list = []
+    movies_details_data = []
 
     for movie in movies[1:]:
         movie_details = movie.find_all('td')
@@ -108,9 +109,9 @@ def scrap_movies_list_from_wiki(movies_csv_data):
         movies_dict['movie_genres'] = movie_genres
         movies_dict['rating'] = rating
 
-        movies_details_info_list.append(movies_dict)
+        movies_details_data.append(movies_dict)
 
     print("Movie Scraping Completed")
-    print(movies_details_info_list)
-    # return movies_details_info_list
+    if movies_details_data:
+        MoviesData.objects.save_movies_data(movies_details_data)
 
