@@ -10,7 +10,7 @@
 
 **Notes**
 
-* I am asuming that you already installed Python3, Git and PostgreSQL in you system.
+* I am asuming that you already installed Python3, Git and PostgreSQL(11) in you system.
 * Create a `env.py` as like as `example_env.py`.
 * You have a database with same credentials as in `env.py`. If not then configure your own `env.py` file.
 * You can run this project by simply downloading and executing `run.sh` script.
@@ -34,7 +34,7 @@
 > 
 
 **When Python Shell Terminal Appears Please Execute This Commands**
-> **from data_processor.caller import data_processor**
+> **from data_processor.caller import data_processor**\
 > **data_processor()**
 
 
