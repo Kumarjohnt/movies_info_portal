@@ -42,5 +42,18 @@ class GetMovieDetailsData(APIView):
         response_data = MoviesData.objects.get_movie_data_by_id(movie_id)
         movie_data_serializer = MovieDetailsSerializer(response_data, many=True)
 
-        return Response(movie_data_serializer.data, status=status.HTTP_200_OK)
+        data = movie_data_serializer.data
+        if len(data) > 0:
+            return Response(
+                {
+                    'data': data,
+                    'message': "Successfully Fetched Requested Movie's Details"
+                }, status=status.HTTP_200_OK
+            )
 
+        else:
+            return Response(
+                {
+                    'message': "No Movie Details Found for This ID - {}".format(movie_id),
+                }, status=status.HTTP_404_NOT_FOUND
+            )
