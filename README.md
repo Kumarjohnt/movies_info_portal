@@ -22,13 +22,15 @@
 > 
 
 **Manually Project Execution Commands**
-> **`pip install -r requirements.txt`**\
+> **`pip install -r requirements.txt`**
+>
 > **`python manage.py makemigrations`**\
 > **`python manage.py migrate`**
 >
 > **`python manage.py shell`**\
 > **`from data_processor.caller import data_processor`**\
-> **`data_processor()`**
+> **`data_processor()`**\
+> **`exit()`**
 >
 > **`python manage.py runserver`**
 > 
