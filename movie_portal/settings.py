@@ -90,8 +90,12 @@ WSGI_APPLICATION = 'movie_portal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': ENGINE,
-        'NAME': NAME,
+        'ENGINE': DATABASE_ENGINE,
+        'NAME': DATABASE_NAME,
+        'USER': DATABASE_USER,
+        'PASSWORD': DATABASE_PASSWORD,
+        'HOST': DATABASE_HOST,
+        'PORT': DATABASE_PORT
     }
 }
 
@@ -113,7 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/

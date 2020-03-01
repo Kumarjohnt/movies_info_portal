@@ -115,8 +115,8 @@ class MoviesDataManager(models.Manager):
         return self.all()
 
     # get movie details by ID
-    def get_movie_data_by_id(self, id):
-        return self.filter(id=id)
+    def get_movie_data_by_id(self, movie_id):
+        return self.filter(id=movie_id)
 
 
 class MoviesData(models.Model):
