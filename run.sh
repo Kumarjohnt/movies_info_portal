@@ -14,6 +14,8 @@ if [[ "$os" == 'LINUX' ]]; then
     mkdir venvs
     # Install virtualenv
     pip3 install virtualenv --user
+    # Install virtualenv globally
+    sudo apt install virtualenv
     # Create a virtualenv named cefalo_test_venv
     virtualenv -p python3 venvs/cefalo_test_venv
     # Activate the created env
