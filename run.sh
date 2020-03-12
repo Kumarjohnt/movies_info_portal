@@ -50,7 +50,7 @@ python manage.py makemigrations
 python manage.py migrate
 
 # Run python shell to seed wiki data
-python manage.py shell
+python manage.py data-scraper
 
 # Run project
 python manage.py runserver
