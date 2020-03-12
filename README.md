@@ -27,21 +27,10 @@
 > **`python manage.py makemigrations`**\
 > **`python manage.py migrate`**
 >
-> **`python manage.py shell`**\
-> **`from data_processor.processor import data_processor`**\
-> **`data_processor()`**\
-> **`exit()`**
+> **`python manage.py data-scraper`**
 >
 > **`python manage.py runserver`**
 > 
-
-**When Python Shell Terminal Appears Please Execute Below Mentioned Commands**
-> **from data_processor.processor import data_processor**\
-> **data_processor()**
-
-
-**After Completed Scraping Please Execute Below Mentioned Command To Exit From Python Shell**
-> **exit()**
 
 **Sample API Urls**
 
