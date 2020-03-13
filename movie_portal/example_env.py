@@ -3,8 +3,8 @@ ALLOWED_HOSTS = ['*']
 DEBUG = False
 
 DATABASE_ENGINE = 'django.db.backends.postgresql_psycopg2'
-DATABASE_NAME = 'cefalo_test_db'
-DATABASE_USER = 'postgres'
-DATABASE_PASSWORD = 'postgres'
+DATABASE_NAME = 'test_db'
+DATABASE_USER = 'test_db_username'
+DATABASE_PASSWORD = 'test_db_password'
 DATABASE_HOST = 'localhost'
 DATABASE_PORT = '5432'
